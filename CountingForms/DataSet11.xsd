@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet11.xsd" xmlns:mstns="http://tempuri.org/DataSet11.xsd" xmlns="http://tempuri.org/DataSet11.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CountingForms.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="R1TableAdapter" GeneratorDataComponentClassName="R1TableAdapter" Name="R1" UserDataComponentName="R1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="CountingDB.db_owner.R1" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Клиент, [Дата создание подготовки], [Дата изменение], Оператор, [Дата получения], [Номер сумки], Назначение, [Заявлено номинал], [Заявлено количество], [Заявлено сумма], [Посчитано номинал], [Посчитано количество], [Посчитано сумма], [Расхождение сумма], [Расхождение количество], Валюта FROM db_owner.R1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Клиент" DataSetColumn="Клиент" />
+              <Mapping SourceColumn="Дата создание подготовки" DataSetColumn="Дата создание подготовки" />
+              <Mapping SourceColumn="Дата изменение" DataSetColumn="Дата изменение" />
+              <Mapping SourceColumn="Оператор" DataSetColumn="Оператор" />
+              <Mapping SourceColumn="Дата получения" DataSetColumn="Дата получения" />
+              <Mapping SourceColumn="Номер сумки" DataSetColumn="Номер сумки" />
+              <Mapping SourceColumn="Назначение" DataSetColumn="Назначение" />
+              <Mapping SourceColumn="Заявлено номинал" DataSetColumn="Заявлено номинал" />
+              <Mapping SourceColumn="Заявлено количество" DataSetColumn="Заявлено количество" />
+              <Mapping SourceColumn="Заявлено сумма" DataSetColumn="Заявлено сумма" />
+              <Mapping SourceColumn="Посчитано номинал" DataSetColumn="Посчитано номинал" />
+              <Mapping SourceColumn="Посчитано количество" DataSetColumn="Посчитано количество" />
+              <Mapping SourceColumn="Посчитано сумма" DataSetColumn="Посчитано сумма" />
+              <Mapping SourceColumn="Расхождение сумма" DataSetColumn="Расхождение сумма" />
+              <Mapping SourceColumn="Расхождение количество" DataSetColumn="Расхождение количество" />
+              <Mapping SourceColumn="Валюта" DataSetColumn="Валюта" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="R1" msprop:Generator_TableClassName="R1DataTable" msprop:Generator_TableVarName="tableR1" msprop:Generator_TablePropName="R1" msprop:Generator_RowDeletingName="R1RowDeleting" msprop:Generator_RowChangingName="R1RowChanging" msprop:Generator_RowEvHandlerName="R1RowChangeEventHandler" msprop:Generator_RowDeletedName="R1RowDeleted" msprop:Generator_UserTableName="R1" msprop:Generator_RowChangedName="R1RowChanged" msprop:Generator_RowEvArgName="R1RowChangeEvent" msprop:Generator_RowClassName="R1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Клиент" msprop:Generator_ColumnVarNameInTable="columnКлиент" msprop:Generator_ColumnPropNameInRow="Клиент" msprop:Generator_ColumnPropNameInTable="КлиентColumn" msprop:Generator_UserColumnName="Клиент" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="350" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_создание_x0020_подготовки" msprop:Generator_ColumnVarNameInTable="columnДата_создание_подготовки" msprop:Generator_ColumnPropNameInRow="Дата_создание_подготовки" msprop:Generator_ColumnPropNameInTable="Дата_создание_подготовкиColumn" msprop:Generator_UserColumnName="Дата создание подготовки" type="xs:dateTime" />
+              <xs:element name="Дата_x0020_изменение" msprop:Generator_ColumnVarNameInTable="columnДата_изменение" msprop:Generator_ColumnPropNameInRow="Дата_изменение" msprop:Generator_ColumnPropNameInTable="Дата_изменениеColumn" msprop:Generator_UserColumnName="Дата изменение" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Оператор" msprop:Generator_ColumnVarNameInTable="columnОператор" msprop:Generator_ColumnPropNameInRow="Оператор" msprop:Generator_ColumnPropNameInTable="ОператорColumn" msprop:Generator_UserColumnName="Оператор" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_получения" msprop:Generator_ColumnVarNameInTable="columnДата_получения" msprop:Generator_ColumnPropNameInRow="Дата_получения" msprop:Generator_ColumnPropNameInTable="Дата_полученияColumn" msprop:Generator_UserColumnName="Дата получения" type="xs:dateTime" />
+              <xs:element name="Номер_x0020_сумки" msprop:Generator_ColumnVarNameInTable="columnНомер_сумки" msprop:Generator_ColumnPropNameInRow="Номер_сумки" msprop:Generator_ColumnPropNameInTable="Номер_сумкиColumn" msprop:Generator_UserColumnName="Номер сумки" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Назначение" msprop:Generator_ColumnVarNameInTable="columnНазначение" msprop:Generator_ColumnPropNameInRow="Назначение" msprop:Generator_ColumnPropNameInTable="НазначениеColumn" msprop:Generator_UserColumnName="Назначение" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Заявлено_x0020_номинал" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnЗаявлено_номинал" msprop:Generator_ColumnPropNameInRow="Заявлено_номинал" msprop:Generator_ColumnPropNameInTable="Заявлено_номиналColumn" msprop:Generator_UserColumnName="Заявлено номинал" type="xs:int" minOccurs="0" />
+              <xs:element name="Заявлено_x0020_количество" msprop:Generator_ColumnVarNameInTable="columnЗаявлено_количество" msprop:Generator_ColumnPropNameInRow="Заявлено_количество" msprop:Generator_ColumnPropNameInTable="Заявлено_количествоColumn" msprop:Generator_UserColumnName="Заявлено количество" type="xs:int" minOccurs="0" />
+              <xs:element name="Заявлено_x0020_сумма" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnЗаявлено_сумма" msprop:Generator_ColumnPropNameInRow="Заявлено_сумма" msprop:Generator_ColumnPropNameInTable="Заявлено_суммаColumn" msprop:Generator_UserColumnName="Заявлено сумма" type="xs:int" minOccurs="0" />
+              <xs:element name="Посчитано_x0020_номинал" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnПосчитано_номинал" msprop:Generator_ColumnPropNameInRow="Посчитано_номинал" msprop:Generator_ColumnPropNameInTable="Посчитано_номиналColumn" msprop:Generator_UserColumnName="Посчитано номинал" type="xs:int" minOccurs="0" />
+              <xs:element name="Посчитано_x0020_количество" msprop:Generator_ColumnVarNameInTable="columnПосчитано_количество" msprop:Generator_ColumnPropNameInRow="Посчитано_количество" msprop:Generator_ColumnPropNameInTable="Посчитано_количествоColumn" msprop:Generator_UserColumnName="Посчитано количество" type="xs:int" minOccurs="0" />
+              <xs:element name="Посчитано_x0020_сумма" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnПосчитано_сумма" msprop:Generator_ColumnPropNameInRow="Посчитано_сумма" msprop:Generator_ColumnPropNameInTable="Посчитано_суммаColumn" msprop:Generator_UserColumnName="Посчитано сумма" type="xs:int" minOccurs="0" />
+              <xs:element name="Расхождение_x0020_сумма" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnРасхождение_сумма" msprop:Generator_ColumnPropNameInRow="Расхождение_сумма" msprop:Generator_ColumnPropNameInTable="Расхождение_суммаColumn" msprop:Generator_UserColumnName="Расхождение сумма" type="xs:int" minOccurs="0" />
+              <xs:element name="Расхождение_x0020_количество" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnРасхождение_количество" msprop:Generator_ColumnPropNameInRow="Расхождение_количество" msprop:Generator_ColumnPropNameInTable="Расхождение_количествоColumn" msprop:Generator_UserColumnName="Расхождение количество" type="xs:int" minOccurs="0" />
+              <xs:element name="Валюта" msprop:Generator_ColumnVarNameInTable="columnВалюта" msprop:Generator_ColumnPropNameInRow="Валюта" msprop:Generator_ColumnPropNameInTable="ВалютаColumn" msprop:Generator_UserColumnName="Валюта" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

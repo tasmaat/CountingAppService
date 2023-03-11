@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71EFDFA4-4B53-45D9-BC4A-D4C0AC93D18D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CountingDB</RootNamespace>
+    <AssemblyName>CountingDB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonObjectModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Controllers.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CubeDefModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataDefModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ReportDefModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Shared.13.0.4001\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CountingDBDataSet.cs">
+      <DependentUpon>CountingDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CountingDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountingDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DBContext.cs" />
+    <Compile Include="Entities\sysdiagrams.cs" />
+    <Compile Include="Entities\t_g_account.cs" />
+    <Compile Include="Entities\t_g_akt.cs" />
+    <Compile Include="Entities\t_g_bagdefects.cs" />
+    <Compile Include="Entities\t_g_bagdefect_factor.cs" />
+    <Compile Include="Entities\t_g_bags.cs" />
+    <Compile Include="Entities\t_g_bags_opening.cs" />
+    <Compile Include="Entities\t_g_cards.cs" />
+    <Compile Include="Entities\t_g_cash.cs" />
+    <Compile Include="Entities\t_g_cashcentre.cs" />
+    <Compile Include="Entities\t_g_cashtransfer_detalization.cs" />
+    <Compile Include="Entities\t_g_cashtransfer_detalization_trace.cs" />
+    <Compile Include="Entities\t_g_cash_trace.cs" />
+    <Compile Include="Entities\t_g_cause.cs" />
+    <Compile Include="Entities\t_g_cause_description.cs" />
+    <Compile Include="Entities\t_g_city.cs" />
+    <Compile Include="Entities\t_g_client.cs" />
+    <Compile Include="Entities\t_g_clienttocc.cs" />
+    <Compile Include="Entities\t_g_clisubfml.cs" />
+    <Compile Include="Entities\t_g_condition.cs" />
+    <Compile Include="Entities\t_g_condition_factor.cs" />
+    <Compile Include="Entities\t_g_counting.cs" />
+    <Compile Include="Entities\t_g_counting_config.cs" />
+    <Compile Include="Entities\t_g_counting_content.cs" />
+    <Compile Include="Entities\t_g_counting_content_trace.cs" />
+    <Compile Include="Entities\t_g_counting_denom.cs" />
+    <Compile Include="Entities\t_g_counting_denom_trace.cs" />
+    <Compile Include="Entities\t_g_counting_trace.cs" />
+    <Compile Include="Entities\t_g_currency.cs" />
+    <Compile Include="Entities\t_g_declared_denom.cs" />
+    <Compile Include="Entities\t_g_denomination.cs" />
+    <Compile Include="Entities\t_g_dvdeneg.cs" />
+    <Compile Include="Entities\t_g_dvdeneg_jrn.cs" />
+    <Compile Include="Entities\t_g_encashpoint.cs" />
+    <Compile Include="Entities\t_g_garter.cs" />
+    <Compile Include="Entities\t_g_marschrut.cs" />
+    <Compile Include="Entities\t_g_moving_bags.cs" />
+    <Compile Include="Entities\t_g_moving_bags_detal.cs" />
+    <Compile Include="Entities\t_g_multi_bags.cs" />
+    <Compile Include="Entities\t_g_multi_bags_content.cs" />
+    <Compile Include="Entities\t_g_name_column.cs" />
+    <Compile Include="Entities\t_g_nastr_form.cs" />
+    <Compile Include="Entities\t_g_pechatclien.cs" />
+    <Compile Include="Entities\t_g_pered.cs" />
+    <Compile Include="Entities\t_g_pered_detal.cs" />
+    <Compile Include="Entities\t_g_pols_ip.cs" />
+    <Compile Include="Entities\t_g_role.cs" />
+    <Compile Include="Entities\t_g_role_permisions.cs" />
+    <Compile Include="Entities\t_g_rules.cs" />
+    <Compile Include="Entities\t_g_shift.cs" />
+    <Compile Include="Entities\t_g_shift_user.cs" />
+    <Compile Include="Entities\t_g_shift_zona.cs" />
+    <Compile Include="Entities\t_g_sprav.cs" />
+    <Compile Include="Entities\t_g_status.cs" />
+    <Compile Include="Entities\t_g_tipzenn.cs" />
+    <Compile Include="Entities\t_g_user.cs" />
+    <Compile Include="Entities\t_parent_table.cs" />
+    <Compile Include="Entities\t_w_bagdefect.cs" />
+    <Compile Include="Entities\t_w_cashtransfer.cs" />
+    <Compile Include="Entities\t_w_sessions.cs" />
+    <Compile Include="Entities\t_w_transaction.cs" />
+    <Compile Include="MSDataBase.cs" />
+    <Compile Include="MSDataBaseAsync.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SQLDataAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CountingDBDataSet.xsc">
+      <DependentUpon>CountingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CountingDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CountingDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CountingDBDataSet.xss">
+      <DependentUpon>CountingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataExchange\DataExchange.csproj">
+      <Project>{20a8bca8-f4f3-4bd8-8d2b-98f2efdf3d9c}</Project>
+      <Name>DataExchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventLogger\EventLogger.csproj">
+      <Project>{6fe15b8e-9d3c-46d7-9038-24f96eac0e62}</Project>
+      <Name>EventLogger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

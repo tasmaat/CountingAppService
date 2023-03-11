@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{025695B9-2276-4AD0-A263-375885B03273}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CountingForms</RootNamespace>
+    <AssemblyName>CountingForms</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ClientDoc.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonControls.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonObjectModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Controllers.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CubeDefModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataDefModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataSetConversion.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ObjectFactory.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Prompting.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ReportDefModel.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.XmlSerialize.13.0.4001\lib\net40\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Shared.13.0.4001\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EWSoftware.ListControls, Version=2020.11.25.0, Culture=neutral, PublicKeyToken=74660aaee20da427, processorArchitecture=MSIL">
+      <HintPath>..\packages\EWSoftware.ListControls.2020.11.25\lib\net40\EWSoftware.ListControls.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>..\CountingAppService\bin\Debug\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FilteredComboBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\THEFilteredComboBox.1.0.0\lib\net35\FilteredComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\AddCardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\AddCardsForm.Designer.cs">
+      <DependentUpon>AddCardsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\CennostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\CennostForm.Designer.cs">
+      <DependentUpon>CennostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\CpsMatchingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\CpsMatchingForm.Designer.cs">
+      <DependentUpon>CpsMatchingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DvigsrFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DvigsrFrm.Designer.cs">
+      <DependentUpon>DvigsrFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\JrnlDvij1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\JrnlDvij1.Designer.cs">
+      <DependentUpon>JrnlDvij1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\Log1Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\Log1Frm.Designer.cs">
+      <DependentUpon>Log1Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\MultiBagsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\MultiBagsForm.Designer.cs">
+      <DependentUpon>MultiBagsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\OpeningBagsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\OpeningBagsForm.Designer.cs">
+      <DependentUpon>OpeningBagsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\Otchetkorr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\Otchetkorr.Designer.cs">
+      <DependentUpon>Otchetkorr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\OtchetPodrobn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\OtchetPodrobn.Designer.cs">
+      <DependentUpon>OtchetPodrobn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\PlombForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\PlombForm.Designer.cs">
+      <DependentUpon>PlombForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\SendBagsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\SendBagsForm.Designer.cs">
+      <DependentUpon>SendBagsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\SendCashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\SendCashForm.Designer.cs">
+      <DependentUpon>SendCashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ShiftCloseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ShiftCloseForm.Designer.cs">
+      <DependentUpon>ShiftCloseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ShiftOpingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ShiftOpingForm.Designer.cs">
+      <DependentUpon>ShiftOpingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\SpravForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\SpravForm2.Designer.cs">
+      <DependentUpon>SpravForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\SpravForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\SpravForm1.Designer.cs">
+      <DependentUpon>SpravForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\TreeViewHelper.cs" />
+    <Compile Include="Interfaces\IDBRepository.cs" />
+    <Compile Include="Interfaces\IPermisionsManager.cs" />
+    <Compile Include="ManagePermisions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePermisions.Designer.cs">
+      <DependentUpon>ManagePermisions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ControlNames.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Sanction.cs" />
+    <Compile Include="Models\ViewElement.cs" />
+    <Compile Include="ParentForms\AktForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\AktForm.Designer.cs">
+      <DependentUpon>AktForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\AktNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\AktNewForm.Designer.cs">
+      <DependentUpon>AktNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\DenominationParentForSC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\DenominationParentForSC.Designer.cs">
+      <DependentUpon>DenominationParentForSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\HashCoding.cs" />
+    <Compile Include="ParentForms\Marshrut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\Marshrut.Designer.cs">
+      <DependentUpon>Marshrut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\PlombForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\PlombForm1.Designer.cs">
+      <DependentUpon>PlombForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\ReportShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\ReportShowForm.Designer.cs">
+      <DependentUpon>ReportShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\shiftAddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\shiftAddUserForm.Designer.cs">
+      <DependentUpon>shiftAddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RejectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RejectForm.Designer.cs">
+      <DependentUpon>RejectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CountingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountingForm.Designer.cs">
+      <DependentUpon>CountingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\CashCentreDictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\CashCentreDictForm.Designer.cs">
+      <DependentUpon>CashCentreDictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\CityDictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\CityDictForm.Designer.cs">
+      <DependentUpon>CityDictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ClientDictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ClientDictForm.Designer.cs">
+      <DependentUpon>ClientDictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ClientGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ClientGroupForm.Designer.cs">
+      <DependentUpon>ClientGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\ConditionDictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\ConditionDictForm.Designer.cs">
+      <DependentUpon>ConditionDictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\CurrencyDictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\CurrencyDictForm.Designer.cs">
+      <DependentUpon>CurrencyDictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DenominationDictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DenominationDictForm.Designer.cs">
+      <DependentUpon>DenominationDictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\Counterfeit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\Counterfeit.Designer.cs">
+      <DependentUpon>Counterfeit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrepCountingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrepCountingForm.Designer.cs">
+      <DependentUpon>PrepCountingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\DictionaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\DictionaryForm.Designer.cs">
+      <DependentUpon>DictionaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\DictionaryTabForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\DictionaryTabForm.Designer.cs">
+      <DependentUpon>DictionaryTabForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\DenominationParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForms\DenominationParent.Designer.cs">
+      <DependentUpon>DenominationParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForms\ParentForm.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ParentForms\ParentForm.Designer.cs">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DBRepository.cs" />
+    <Compile Include="Services\PermisionsManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DictionaryForms\AddCardsForm.resx">
+      <DependentUpon>AddCardsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\CennostForm.resx">
+      <DependentUpon>CennostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ClientGroupForm.resx">
+      <DependentUpon>ClientGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\CpsMatchingForm.resx">
+      <DependentUpon>CpsMatchingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DvigsrFrm.resx">
+      <DependentUpon>DvigsrFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\JrnlDvij1.resx">
+      <DependentUpon>JrnlDvij1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\Log1Frm.resx">
+      <DependentUpon>Log1Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\MultiBagsForm.resx">
+      <DependentUpon>MultiBagsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\OpeningBagsForm.resx">
+      <DependentUpon>OpeningBagsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\Otchetkorr.resx">
+      <DependentUpon>Otchetkorr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\OtchetPodrobn.resx">
+      <DependentUpon>OtchetPodrobn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\PlombForm.resx">
+      <DependentUpon>PlombForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\SendBagsForm.resx">
+      <DependentUpon>SendBagsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\SendCashForm.resx">
+      <DependentUpon>SendCashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ShiftCloseForm.resx">
+      <DependentUpon>ShiftCloseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ShiftOpingForm.resx">
+      <DependentUpon>ShiftOpingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\SpravForm2.resx">
+      <DependentUpon>SpravForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\SpravForm1.resx">
+      <DependentUpon>SpravForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePermisions.resx">
+      <DependentUpon>ManagePermisions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\AktForm.resx">
+      <DependentUpon>AktForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\AktNewForm.resx">
+      <DependentUpon>AktNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\DenominationParentForSC.resx">
+      <DependentUpon>DenominationParentForSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\Marshrut.resx">
+      <DependentUpon>Marshrut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\PlombForm1.resx">
+      <DependentUpon>PlombForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\ReportShowForm.resx">
+      <DependentUpon>ReportShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\shiftAddUserForm.resx">
+      <DependentUpon>shiftAddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RejectForm.resx">
+      <DependentUpon>RejectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountingForm.resx">
+      <DependentUpon>CountingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\CashCentreDictForm.resx">
+      <DependentUpon>CashCentreDictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\CityDictForm.resx">
+      <DependentUpon>CityDictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ClientDictForm.resx">
+      <DependentUpon>ClientDictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\ConditionDictForm.resx">
+      <DependentUpon>ConditionDictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\CurrencyDictForm.resx">
+      <DependentUpon>CurrencyDictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DenominationDictForm.resx">
+      <DependentUpon>DenominationDictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\Counterfeit.resx">
+      <DependentUpon>Counterfeit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrepCountingForm.resx">
+      <DependentUpon>PrepCountingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\DenominationParent.resx">
+      <DependentUpon>DenominationParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\DictionaryForm.resx">
+      <DependentUpon>DictionaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\DictionaryTabForm.resx">
+      <DependentUpon>DictionaryTabForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForms\ParentForm.resx">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CountingDB\CountingDB.csproj">
+      <Project>{71EFDFA4-4B53-45D9-BC4A-D4C0AC93D18D}</Project>
+      <Name>CountingDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataExchange\DataExchange.csproj">
+      <Project>{20a8bca8-f4f3-4bd8-8d2b-98f2efdf3d9c}</Project>
+      <Name>DataExchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Login\Login.csproj">
+      <Project>{f2b3bdef-7260-4ec8-b732-361cd6f2bb65}</Project>
+      <Name>Login</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSet11.xsc">
+      <DependentUpon>DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet11.xss">
+      <DependentUpon>DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
